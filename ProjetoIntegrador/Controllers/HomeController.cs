@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoIntegrador.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,21 +11,14 @@ namespace ProjetoIntegrador.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return PartialView("~/Views/Project.cshtml");
         }
 
-        public ActionResult About()
+        public ActionResult Teste(ProjectModel model)
         {
-            ViewBag.Message = "Your application description page.";
+            JsonResult result = new JsonResult();
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return result;
         }
     }
 }
