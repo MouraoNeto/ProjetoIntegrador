@@ -7,5 +7,6 @@ namespace ProjetoIntegrador.Entidades
 {
     public class BitReference : BaseEntity
     {
+        public int Num1 { get; set; }
     }
 }

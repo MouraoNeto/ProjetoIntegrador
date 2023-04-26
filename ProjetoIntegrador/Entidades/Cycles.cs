@@ -7,5 +7,6 @@ namespace ProjetoIntegrador.Entidades
 {
     public class Cycles : BaseEntity
     {
+        public int Numero { get; set; }
     }
 }
