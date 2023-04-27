@@ -7,7 +7,7 @@
 <h3>@ViewBag.Message</h3>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="~/Scripts/Project.js"></script>
+<script src="~/Scripts/Js/MemorySize.js"></script>
 
 <style>
 
@@ -85,25 +85,13 @@
 <body>
     <label for="email">Selecione uma das opções</label>
 
-    <br />
-    <br />
+    <form class="formulario" method="post" id="MemoryForm">
 
-    <button type="button" class="btn btn-primary" data-index="1">Inserir Aging</button>
-    <button type="button" class="btn btn-primary" data-index="2">Inserir BitReference</button>
-    <button type="button" class="btn btn-primary" data-index="3">Inserir Cycles</button>
-    <button type="button" class="btn btn-primary" data-index="4">Inserir MemorySize</button>
-    <button type="button" class="btn btn-primary" data-index="5">Inserir Pages</button>
-    <button type="button" class="btn btn-primary" data-index="6">Inserir WsClock</button>
+        <div class="field">
+            <label for="nome">Digite o tamanho da memoria:</label>
+            <input type="text" id="Tamanho" name="Tamanho">
+        </div>
 
-    <br />
-
-    <button type="button" class="btn btn-primary" data-index="7">Listar Aging</button>
-    <button type="button" class="btn btn-primary" data-index="8">Listar BitReference</button>
-    <button type="button" class="btn btn-primary" data-index="9">Listar Cycles</button>
-    <button type="button" class="btn btn-primary" data-index="10">Listar MemorySize</button>
-    <button type="button" class="btn btn-primary" data-index="11">Listar Pages</button>
-    <button type="button" class="btn btn-primary" data-index="12">Listar WsClock</button>
-
-
-    <div id="Form"></div>
+        <input type="submit" name="btnSave" value="Enviar" id="saveMemory">
+    </form>
 </body>

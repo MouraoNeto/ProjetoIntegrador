@@ -27,7 +27,7 @@ namespace ProjetoIntegrador.DBC
                             MemorySize MemorySize = new MemorySize()
                             {
                                 Id = reader.GetInt32(0),
-                                Tamanho = reader.GetString(1)
+                                Tamanho = reader.GetInt32(1)
                             };
                             list.Add(MemorySize);
                         }

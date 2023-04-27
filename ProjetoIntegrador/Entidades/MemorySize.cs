@@ -9,6 +9,6 @@ namespace ProjetoIntegrador.Entidades
     [Table("MemorySize")]
     public class MemorySize : BaseEntity
     {
-        public string Tamanho { get; set; }
+        public int Tamanho { get; set; }
     }
 }

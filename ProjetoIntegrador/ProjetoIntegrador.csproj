@@ -142,6 +142,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CyclesModel.cs" />
+    <Compile Include="Models\MemorySizeModel.cs" />
+    <Compile Include="Models\PagesModel.cs" />
+    <Compile Include="Models\AgingModel.cs" />
+    <Compile Include="Models\WsClockModel.cs" />
+    <Compile Include="Models\BitReferenceModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,8 +173,14 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Js\Cycles.js" />
+    <Content Include="Scripts\Js\MemorySize.js" />
+    <Content Include="Scripts\Js\Pages.js" />
+    <Content Include="Scripts\Js\WsClock.js" />
+    <Content Include="Scripts\Js\BitReference.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Project.js" />
+    <Content Include="Scripts\Js\Aging.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -183,7 +196,18 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Project.cshtml" />
-    <Content Include="Views\Grid.cshtml" />
+    <Content Include="Views\AgingGrid.cshtml" />
+    <Content Include="Views\BitReferenceGrid.cshtml" />
+    <Content Include="Views\MemorySizeGrid.cshtml" />
+    <Content Include="Views\CyclesGrid.cshtml" />
+    <Content Include="Views\PagesGrid.cshtml" />
+    <Content Include="Views\WsClockGrid.cshtml" />
+    <Content Include="Views\Forms\AgingForm.cshtml" />
+    <Content Include="Views\Forms\BitReferenceForm.cshtml" />
+    <Content Include="Views\Forms\WsClockForm.cshtml" />
+    <Content Include="Views\Forms\PagesForm.cshtml" />
+    <Content Include="Views\Forms\MemorySizeForm.cshtml" />
+    <Content Include="Views\Forms\CyclesForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

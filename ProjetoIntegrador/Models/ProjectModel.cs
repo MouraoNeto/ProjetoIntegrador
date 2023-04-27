@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ProjetoIntegrador.Models
+﻿namespace ProjetoIntegrador.Models
 {
     public class ProjectModel
     {
