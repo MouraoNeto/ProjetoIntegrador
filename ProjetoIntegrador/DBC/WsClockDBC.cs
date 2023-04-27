@@ -6,7 +6,7 @@ namespace ProjetoIntegrador.DBC
 {
     public class WsClockDBC
     {
-        public static string ConnectionString = @"DATA SOURCE=DESKTOP-2KBJAIR\SQLEXPRESS2023; INTEGRATED SECURITY=SSPI; INITIAL CATALOG=ProjetoIntegrador";
+        public static string ConnectionString = @"DATA SOURCE=MOURAO-NITRO; INTEGRATED SECURITY=SSPI; INITIAL CATALOG=ProjetoIntegrador";
 
         public static List<WsClock> GetWsClockList()
         {
