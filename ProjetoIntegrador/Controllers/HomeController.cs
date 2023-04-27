@@ -1,10 +1,8 @@
 ﻿using ProjetoIntegrador.DBC;
 using ProjetoIntegrador.DTOs;
+using ProjetoIntegrador.Entidades;
 using ProjetoIntegrador.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ProjetoIntegrador.Controllers
@@ -16,7 +14,7 @@ namespace ProjetoIntegrador.Controllers
             return PartialView("~/Views/Project.cshtml");
         }
 
-        public ActionResult Teste(ProjectModel model)
+        public ActionResult CreateForm(ProjectModel model)
         {
             JsonResult result = new JsonResult();
 
@@ -35,8 +33,12 @@ namespace ProjetoIntegrador.Controllers
                     CVT = model.CVT,
                     Age = model.Age
                 };
+                BitReference aging = new BitReference()
+                {
+                    Num1 = projectDTO.BitNumber
+                };
 
-                AgingBDC aging = new AgingBDC();
+                BitReferenceDBC.InsertBitReference(aging);
 
             }
             catch (Exception ex)

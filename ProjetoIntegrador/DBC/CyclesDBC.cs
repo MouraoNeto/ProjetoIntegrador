@@ -4,19 +4,19 @@ using System.Data.SqlClient;
 
 namespace ProjetoIntegrador.DBC
 {
-    public class AgingBDC
+    public class CyclesDBC
     {
         public static string ConnectionString = @"DATA SOURCE=DESKTOP-2KBJAIR\SQLEXPRESS2023; INTEGRATED SECURITY=SSPI; INITIAL CATALOG=ProjetoIntegrador";
 
-        public static List<Aging> GetAgingList()
+        public static List<Cycles> GetCyclesList()
         {
-            List<Aging> list = new List<Aging>();
+            List<Cycles> list = new List<Cycles>();
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "SELECT * FROM Aging";
+                string sqlCommand = "SELECT * FROM Cycles";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
@@ -24,12 +24,12 @@ namespace ProjetoIntegrador.DBC
                     {
                         while (reader.Read())
                         {
-                            Aging aging = new Aging()
+                            Cycles Cycles = new Cycles()
                             {
                                 Id = reader.GetInt32(0),
-                                Contador = reader.GetInt32(1)
+                                Numero = reader.GetInt32(1)
                             };
-                            list.Add(aging);
+                            list.Add(Cycles);
                         }
                     }
                 }
@@ -38,17 +38,17 @@ namespace ProjetoIntegrador.DBC
             return list;
         }
 
-        public static void InsertAging(Aging aging)
+        public static void InsertCycles(Cycles Cycles)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "INSERT INTO Aging([Contador]) VALUES (@contador)";
+                string sqlCommand = "INSERT INTO Cycles([Numero]) VALUES (@Numero)";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
-                    command.Parameters.AddWithValue("@contador", aging.Contador);
+                    command.Parameters.AddWithValue("@Numero", Cycles.Numero);
 
                     command.ExecuteNonQuery();
                 }

@@ -4,19 +4,19 @@ using System.Data.SqlClient;
 
 namespace ProjetoIntegrador.DBC
 {
-    public class AgingBDC
+    public class WsClockDBC
     {
         public static string ConnectionString = @"DATA SOURCE=DESKTOP-2KBJAIR\SQLEXPRESS2023; INTEGRATED SECURITY=SSPI; INITIAL CATALOG=ProjetoIntegrador";
 
-        public static List<Aging> GetAgingList()
+        public static List<WsClock> GetWsClockList()
         {
-            List<Aging> list = new List<Aging>();
+            List<WsClock> list = new List<WsClock>();
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "SELECT * FROM Aging";
+                string sqlCommand = "SELECT * FROM WsClock";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
@@ -24,12 +24,15 @@ namespace ProjetoIntegrador.DBC
                     {
                         while (reader.Read())
                         {
-                            Aging aging = new Aging()
+                            WsClock WsClock = new WsClock()
                             {
                                 Id = reader.GetInt32(0),
-                                Contador = reader.GetInt32(1)
+                                TLU = reader.GetDateTime(1),
+                                BitM = reader.GetInt32(2),
+                                Age = reader.GetInt32(3),
+                                CVT = reader.GetInt32(4)
                             };
-                            list.Add(aging);
+                            list.Add(WsClock);
                         }
                     }
                 }
@@ -38,17 +41,20 @@ namespace ProjetoIntegrador.DBC
             return list;
         }
 
-        public static void InsertAging(Aging aging)
+        public static void InsertWsClock(WsClock WsClock)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "INSERT INTO Aging([Contador]) VALUES (@contador)";
+                string sqlCommand = "INSERT INTO WsClock([TLU],[BitM],[CVT],[Age]) VALUES (@TLU, @BitM, @CVT, @Age)";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
-                    command.Parameters.AddWithValue("@contador", aging.Contador);
+                    command.Parameters.AddWithValue("@TLU", WsClock.TLU);
+                    command.Parameters.AddWithValue("@BitM", WsClock.BitM);
+                    command.Parameters.AddWithValue("@CVT", WsClock.CVT);
+                    command.Parameters.AddWithValue("@Age", WsClock.Age);
 
                     command.ExecuteNonQuery();
                 }

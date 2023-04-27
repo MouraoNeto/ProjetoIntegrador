@@ -4,19 +4,19 @@ using System.Data.SqlClient;
 
 namespace ProjetoIntegrador.DBC
 {
-    public class AgingBDC
+    public class MemorySizeDBC
     {
         public static string ConnectionString = @"DATA SOURCE=DESKTOP-2KBJAIR\SQLEXPRESS2023; INTEGRATED SECURITY=SSPI; INITIAL CATALOG=ProjetoIntegrador";
 
-        public static List<Aging> GetAgingList()
+        public static List<MemorySize> GetMemorySizeList()
         {
-            List<Aging> list = new List<Aging>();
+            List<MemorySize> list = new List<MemorySize>();
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "SELECT * FROM Aging";
+                string sqlCommand = "SELECT * FROM MemorySize";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
@@ -24,12 +24,12 @@ namespace ProjetoIntegrador.DBC
                     {
                         while (reader.Read())
                         {
-                            Aging aging = new Aging()
+                            MemorySize MemorySize = new MemorySize()
                             {
                                 Id = reader.GetInt32(0),
-                                Contador = reader.GetInt32(1)
+                                Tamanho = reader.GetString(1)
                             };
-                            list.Add(aging);
+                            list.Add(MemorySize);
                         }
                     }
                 }
@@ -38,17 +38,17 @@ namespace ProjetoIntegrador.DBC
             return list;
         }
 
-        public static void InsertAging(Aging aging)
+        public static void InsertMemorySize(MemorySize MemorySize)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "INSERT INTO Aging([Contador]) VALUES (@contador)";
+                string sqlCommand = "INSERT INTO MemorySize([Tamanho]) VALUES (@num1)";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
-                    command.Parameters.AddWithValue("@contador", aging.Contador);
+                    command.Parameters.AddWithValue("@num1", MemorySize.Tamanho);
 
                     command.ExecuteNonQuery();
                 }

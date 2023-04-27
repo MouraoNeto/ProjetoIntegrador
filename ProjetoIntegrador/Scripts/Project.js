@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $("#btnSave").click(function () {
 
-        var url = '/Home/Teste'
+        var url = '/Home/CreateForm'
 
         var x = $("#ProjectForm").serialize();
 

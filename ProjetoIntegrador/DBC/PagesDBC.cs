@@ -1,22 +1,22 @@
-﻿using ProjetoIntegrador.Entidades;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ProjetoIntegrador.Entidades;
 using System.Data.SqlClient;
 
 namespace ProjetoIntegrador.DBC
 {
-    public class AgingBDC
+    public class PagesDBC
     {
         public static string ConnectionString = @"DATA SOURCE=DESKTOP-2KBJAIR\SQLEXPRESS2023; INTEGRATED SECURITY=SSPI; INITIAL CATALOG=ProjetoIntegrador";
 
-        public static List<Aging> GetAgingList()
+        public static List<Pages> GetPagesList()
         {
-            List<Aging> list = new List<Aging>();
+            List<Pages> list = new List<Pages>();
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "SELECT * FROM Aging";
+                string sqlCommand = "SELECT * FROM Pages";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
@@ -24,12 +24,13 @@ namespace ProjetoIntegrador.DBC
                     {
                         while (reader.Read())
                         {
-                            Aging aging = new Aging()
+                            Pages Pages = new Pages()
                             {
                                 Id = reader.GetInt32(0),
-                                Contador = reader.GetInt32(1)
+                                Cod = reader.GetInt32(1),
+                                Numero = reader.GetInt32(2)
                             };
-                            list.Add(aging);
+                            list.Add(Pages);
                         }
                     }
                 }
@@ -38,17 +39,18 @@ namespace ProjetoIntegrador.DBC
             return list;
         }
 
-        public static void InsertAging(Aging aging)
+        public static void InsertPages(Pages Pages)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                string sqlCommand = "INSERT INTO Aging([Contador]) VALUES (@contador)";
+                string sqlCommand = "INSERT INTO Pages([Cod], [Numero]) VALUES (@Cod, @Numero)";
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
-                    command.Parameters.AddWithValue("@contador", aging.Contador);
+                    command.Parameters.AddWithValue("@num1", Pages.Cod);
+                    command.Parameters.AddWithValue("@num1", Pages.Numero);
 
                     command.ExecuteNonQuery();
                 }
