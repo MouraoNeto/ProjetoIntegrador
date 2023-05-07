@@ -10,21 +10,12 @@ namespace Application.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return PartialView("~/Views/Index.cshtml");
         }
 
-        public ActionResult About()
+        public ActionResult CreateWsQueue()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            
         }
     }
 }
