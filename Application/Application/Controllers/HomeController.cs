@@ -13,9 +13,29 @@ namespace Application.Controllers
             return PartialView("~/Views/Index.cshtml");
         }
 
-        public ActionResult CreateWsQueue()
+        public ActionResult About()
         {
-            
+            return PartialView("~/Views/About.cshtml");
+        }
+
+        public ActionResult Aging()
+        {
+            return PartialView("~/Views/Aging.cshtml");
+        }
+
+        public ActionResult HowUse()
+        {
+            return PartialView("~/Views/HowUse.cshtml");
+        }
+
+        public ActionResult Simulation()
+        {
+            return PartialView("~/Views/Simulation.cshtml");
+        }
+
+        public ActionResult WsClock()
+        {
+            return PartialView("~/Views/WsClock.cshtml");
         }
     }
 }

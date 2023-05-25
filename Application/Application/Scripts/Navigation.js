@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
-    $("#ws").on('click', function () {
-        var url = '/Home/CreateWsQueue'
+    console.log("aa")
+
+    $(".navBtn").on('click', function (e) {
+        var url = '/Home/' + e.target.dataset.name;
 
         $.ajax({
             method: "POST",
