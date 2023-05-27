@@ -15,27 +15,32 @@ namespace Application.Controllers
 
         public ActionResult About()
         {
-            return PartialView("~/Views/About.cshtml");
+            return View("~/Views/About.cshtml");
+        }
+
+        public ActionResult Home()
+        {
+            return View("~/Views/Home.cshtml");
         }
 
         public ActionResult Aging()
         {
-            return PartialView("~/Views/Aging.cshtml");
+            return View("~/Views/Aging.cshtml");
         }
 
         public ActionResult HowUse()
         {
-            return PartialView("~/Views/HowUse.cshtml");
+            return View("~/Views/HowUse.cshtml");
         }
 
         public ActionResult Simulation()
         {
-            return PartialView("~/Views/Simulation.cshtml");
+            return View("~/Views/Simulation.cshtml");
         }
 
         public ActionResult WsClock()
         {
-            return PartialView("~/Views/WsClock.cshtml");
+            return View("~/Views/WsClock.cshtml");
         }
     }
 }

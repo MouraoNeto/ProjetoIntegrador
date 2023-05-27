@@ -172,6 +172,7 @@
     <Content Include="Views\HowUse.cshtml" />
     <Content Include="Views\Simulation.cshtml" />
     <Content Include="Views\WsClock.cshtml" />
+    <Content Include="Views\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
