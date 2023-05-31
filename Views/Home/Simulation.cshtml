@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Gerenciamento de Mémoria Envelhecimento e WSClock";
+}
+
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/Application.styles.css" asp-append-version="true" />
+
+  <div class="content-page-simulation">
+    <h1>SIMULADOR</h1>
+    <div class="simulation">
+      <div class="algorithm-btn">
+        <a class="aging-btn" asp-area="" asp-controller="Aging" asp-action="Aging">Envelhecimento</a>
+        <a class="wsclock-btn" asp-area="" asp-controller="WsClock" asp-action="WsClock">WsClock</a> 
+      </div>
+    </div>
+    <div class="description-img">
+      <center>
+        <img src="/img/logo.png" alt="logo-img">
+      </center>
+    </div>
+  </div>
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/scripts.js" asp-append-version="true"></script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

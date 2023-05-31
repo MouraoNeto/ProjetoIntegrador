@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Aging";
+}
+
+<link rel="stylesheet" href="~/css/styles.css">
+    
+<div class="content-aging" id="content-aging">
+    <h1 class="content-simulation">Simulação Envelhecimento</h1> 
+    <div class="progress-time-bar" id="progress-time-bar">
+        <div class="progress-time" id="progress-time"></div>
+    </div>
+
+    <div class="inner-simulation" id="inner-simulation">
+    <div id="scenario">
+        <div class="nature-scenery">
+            <img src="~/img/" alt="" id="nature">
+        </div>          
+        <div class="watering-can" id="watering-can">
+            <img src="" alt="" id="watering-can-0">
+            <img src="" alt="" id="watering-can-1">
+            <img src="" alt="" id="watering-can-2">
+            <img src="" alt="" id="watering-can-4">
+        </div>
+
+        <div class="water" id="water"> 
+            <img src="" alt="" id="water-0">
+            <img src="" alt="" id="water-1">
+            <img src="" alt="" id="water-2">
+            <img src="" alt="" id="water-3">
+        </div>
+
+        <div class="tree" id="tree">
+            <input type="image" src="/img/ar1.png" alt="tree-0" id="tree-0" onclick="accessingTree(0)">
+            <input type="image" src="/img/ar2.png" alt="tree-1" id="tree-1" onclick="accessingTree(1)">
+            <input type="image" src="/img/ar3.png" alt="tree-2" id="tree-2" onclick="accessingTree(2)">
+            <input type="image" src="/img/arvore03.png" alt="tree-3" id="tree-3" onclick="accessingTree(3)">
+        </div>
+
+        <div class="counters" id="counters">
+            <button class="btn btn-primary btn-lg" id="counter-0" disabled="">0 0 0 0</button>
+            <button class="btn btn-primary btn-lg" id="counter-1" disabled="">0 0 0 0</button>
+            <button class="btn btn-primary btn-lg" id="counter-2" disabled="">0 0 0 0</button>
+            <button class="btn btn-primary btn-lg" id="counter-3" disabled="">0 0 0 0</button>
+        </div><br>
+    </div>
+    </div>
+</div>
+
+<script src="~/js/scripts.js"></script>
