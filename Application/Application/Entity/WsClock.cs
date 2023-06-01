@@ -33,17 +33,16 @@ namespace Application.Entity
                 return;
             }
             
-            for(int i=0; i<= idsToUpdate.Count; i++)
+            for(int i=0; i <= 3; i++)
             {
-                if(i == idsToUpdate[j])
+                if(j != idsToUpdate.Count && i == idsToUpdate[j])
                 {
                     aux.Valor = aux.Valor.Substring(0, 3);
                     aux.Valor = "1" + aux.Valor;
-                    if (aux.Type != Enums.ImgType.ArvoreFrutifera) aux.Type++;
-                    j++;
+                    if (aux.Type != Enums.ImgType.ArvoreFrutifera) 
+                        aux.Type++;
 
-                    if (j == idsToUpdate.Count)
-                        break;
+                    j++;
                 }
                 else
                 {

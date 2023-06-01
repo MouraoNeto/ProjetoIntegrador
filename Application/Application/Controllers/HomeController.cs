@@ -9,12 +9,7 @@ using System.Web.Mvc;
 namespace Application.Controllers
 {
     public class HomeController : Controller
-    {
-        ListModel model = new ListModel()
-        {
-            List = new List().CreateEmptyList()
-        };
-
+    {   
         public ActionResult Index()
         {
             return PartialView("~/Views/Index.cshtml");
@@ -46,8 +41,10 @@ namespace Application.Controllers
         }
 
         public ActionResult WsClock()
-        {     
-            return View("~/Views/WsClock.cshtml", model);
+        {
+            ReturnModel aux = new ReturnModel(ListModel.List);
+
+            return View("~/Views/WsClock.cshtml", aux);
         }
 
         public ActionResult UpdateWsClockList(List<int> idsToUpdate)
@@ -58,10 +55,11 @@ namespace Application.Controllers
                 idsToUpdate.Sort();
             }
 
-            wsClock.UpdateList(idsToUpdate, model.List);
-            
-            return View("~/Views/WsClock.cshtml", model);
+            wsClock.UpdateList(idsToUpdate, ListModel.List);
 
+            ReturnModel aux = new ReturnModel(ListModel.List);
+
+            return View("~/Views/WsClock.cshtml", aux);
         }
     }
 }
