@@ -81,4 +81,10 @@
 
 .content-aging{
     justify-content:center;
+    align-items:center;
+}
+
+.btnInsert{
+    margin: 50px;
+    align-self:center
 }

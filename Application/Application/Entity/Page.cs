@@ -1,4 +1,5 @@
 ﻿using Application.Enums;
+using System;
 
 namespace Application.Entity
 {
@@ -26,5 +27,7 @@ namespace Application.Entity
         }
 
         public ImgType Type { get; set; }
+
+        public DateTime LastAccess { get; set; }
     }
 }

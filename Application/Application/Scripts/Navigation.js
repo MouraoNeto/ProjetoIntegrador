@@ -1,3 +1,5 @@
+var insertNewPage = false;
+
 $(document).ready(function () {
     $(".navBtn").on('click', function (e) {
         var url = '/Home/' + e.target.dataset.name;
@@ -43,12 +45,17 @@ function LoadWsClockPage() {
         success: function (response) {
             $("#Content").html(response);
 
-            repeatSetTimeProgress();
+            repeatSetTimeProgress();            
 
             $(".btnPage").on('click', function (e) {
 
                 if (pagesToAdd.indexOf(parseInt(e.target.dataset.index)) == -1)
                     pagesToAdd.push(parseInt(e.target.dataset.index))
+            })
+
+            $(".btnInsert").on('click', function (e) {
+
+                insertNewPage = true;
             })
 
             setTimeout(function () {
@@ -100,7 +107,8 @@ function UpdateWsClockList(idsToUpdate) {
     var url = '/Home/UpdateWsClockList';
 
     var data = {
-        IdsToUpdate: idsToUpdate
+        IdsToUpdate: idsToUpdate,
+        InsertNewPage: insertNewPage
     }
 
     $.ajax({
@@ -111,7 +119,7 @@ function UpdateWsClockList(idsToUpdate) {
 
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            bootstrapNotify('<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Deu erro!', "danger", "top");
+            //bootstrapNotify('<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Deu erro!', "danger", "top");
         },
         success: function (response) {
             $("#Content").html(response);
@@ -119,11 +127,16 @@ function UpdateWsClockList(idsToUpdate) {
             repeatSetTimeProgress();
 
             idsToUpdate = [];
+            insertNewPage = false;
 
             $(".btnPage").on('click', function (e) {
 
                 if (idsToUpdate.indexOf(parseInt(e.target.dataset.index)) == -1)
                     idsToUpdate.push(parseInt(e.target.dataset.index))
+            })
+            $(".btnInsert").on('click', function (e) {
+
+                insertNewPage = true;
             })
 
             setTimeout(function () {

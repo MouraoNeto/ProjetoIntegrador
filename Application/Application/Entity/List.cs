@@ -16,7 +16,7 @@ namespace Application.Entity
             Page newPage = new Page()
             {
                 Valor = value,
-                Type = type
+                Type = type, LastAccess = DateTime.Now
             };
 
             if(_start == null)

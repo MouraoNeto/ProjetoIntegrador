@@ -47,7 +47,7 @@ namespace Application.Controllers
             return View("~/Views/WsClock.cshtml", aux);
         }
 
-        public ActionResult UpdateWsClockList(List<int> idsToUpdate)
+        public ActionResult UpdateWsClockList(List<int> idsToUpdate, bool insertNewPage)
         {
             WsClock wsClock = new WsClock();
             if(idsToUpdate != null)
@@ -55,7 +55,7 @@ namespace Application.Controllers
                 idsToUpdate.Sort();
             }
 
-            wsClock.UpdateList(idsToUpdate, ListModel.List);
+            wsClock.UpdateList(idsToUpdate, ListModel.List, insertNewPage);
 
             ReturnModel aux = new ReturnModel(ListModel.List);
 

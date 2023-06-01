@@ -9,6 +9,6 @@ namespace Application.Entity
     {
         void SubstituitePage(Page anterior, Page proximo);
 
-        void UpdateList(List<int> idsToUpdate, List List);
+        void UpdateList(List<int> idsToUpdate, List List, bool insertNewPage);
     }
 }

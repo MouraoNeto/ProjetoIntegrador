@@ -12,7 +12,7 @@ namespace Application.Entity
             throw new NotImplementedException();
         }
 
-        public void UpdateList(List<int> idsToUpdate, List List)
+        public void UpdateList(List<int> idsToUpdate, List List, bool insertNewPage)
         {
             Page aux = new Page();
 
@@ -39,6 +39,7 @@ namespace Application.Entity
                 {
                     aux.Valor = aux.Valor.Substring(0, 3);
                     aux.Valor = "1" + aux.Valor;
+                    aux.LastAccess = DateTime.Now;
                     if (aux.Type != Enums.ImgType.ArvoreFrutifera) 
                         aux.Type++;
 
@@ -51,6 +52,45 @@ namespace Application.Entity
                     if(aux.Type != Enums.ImgType.ArvoreSeca) aux.Type--;
                 }
                 aux = aux.Proximo;
+            }
+
+            if (insertNewPage)
+            {
+                List<DateTime> dateTimes = new List<DateTime>();
+
+                aux = List._start;
+
+                while (aux != null)
+                {
+                    dateTimes.Add(aux.LastAccess);
+                    
+                    aux = aux.Proximo;
+                }
+                dateTimes.Min();
+
+                DateTime minDate = dateTimes.Min();
+
+                aux = List._start;
+
+                while (aux != null)
+                {
+                    if(aux.Proximo.LastAccess == minDate)
+                    {
+                        Page newPage = new Page()
+                        {
+                            Proximo = aux.Proximo.Proximo,
+                            Valor = "0000",
+                            LastAccess = DateTime.Now,
+                            Type = Enums.ImgType.ArvoreSeca
+                        };
+
+                        aux.Proximo = newPage;
+
+                        break;
+                    }
+
+                    aux = aux.Proximo;
+                }
             }
         }
     }
