@@ -121,11 +121,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entity\List.cs" />
     <Compile Include="Entity\Page.cs" />
     <Compile Include="Entity\PageSubstituitionAlgorithm.cs" />
+    <Compile Include="Entity\WsClock.cs" />
+    <Compile Include="Enums\ImgType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +137,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CSS\AgingStyle.css" />
     <Content Include="CSS\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -141,7 +146,7 @@
     <Content Include="Imgs\ar1.png" />
     <Content Include="Imgs\ar2.png" />
     <Content Include="Imgs\ar3.png" />
-    <Content Include="Imgs\arvore03.png" />
+    <Content Include="Imgs\ar4.png" />
     <Content Include="Imgs\logo.png" />
     <Content Include="Imgs\regador.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -157,6 +162,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\AgingScript.js" />
     <Content Include="Scripts\Navigation.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
@@ -171,12 +177,11 @@
     <Content Include="Views\Aging.cshtml" />
     <Content Include="Views\HowUse.cshtml" />
     <Content Include="Views\Simulation.cshtml" />
-    <Content Include="Views\WsClock.cshtml" />
     <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\WsClock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

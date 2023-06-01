@@ -1,4 +1,6 @@
-﻿namespace Application.Entity
+﻿using Application.Enums;
+
+namespace Application.Entity
 {
     public class Page
     {
@@ -22,5 +24,7 @@
             get { return _anterior; }
             set { _anterior = value; }
         }
+
+        public ImgType Type { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Application.Entity;
+using Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,11 @@ namespace Application.Controllers
 {
     public class HomeController : Controller
     {
+        ListModel model = new ListModel()
+        {
+            List = new List().CreateEmptyList()
+        };
+
         public ActionResult Index()
         {
             return PartialView("~/Views/Index.cshtml");
@@ -39,8 +46,22 @@ namespace Application.Controllers
         }
 
         public ActionResult WsClock()
+        {     
+            return View("~/Views/WsClock.cshtml", model);
+        }
+
+        public ActionResult UpdateWsClockList(List<int> idsToUpdate)
         {
-            return View("~/Views/WsClock.cshtml");
+            WsClock wsClock = new WsClock();
+            if(idsToUpdate != null)
+            {
+                idsToUpdate.Sort();
+            }
+
+            wsClock.UpdateList(idsToUpdate, model.List);
+            
+            return View("~/Views/WsClock.cshtml", model);
+
         }
     }
 }
