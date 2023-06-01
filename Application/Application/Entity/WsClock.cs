@@ -66,14 +66,28 @@ namespace Application.Entity
                     
                     aux = aux.Proximo;
                 }
-                dateTimes.Min();
 
                 DateTime minDate = dateTimes.Min();
 
                 aux = List._start;
 
+                int i = 0;
+
                 while (aux != null)
                 {
+                    if (i == 0 && aux.LastAccess == minDate)
+                    {
+                        Page newPage = new Page()
+                        {
+                            Proximo = aux.Proximo,
+                            Valor = "0000",
+                            LastAccess = DateTime.Now,
+                            Type = Enums.ImgType.ArvoreSeca
+                        };
+
+                        List._start = newPage;
+                        break;
+                    }
                     if(aux.Proximo.LastAccess == minDate)
                     {
                         Page newPage = new Page()
@@ -84,12 +98,16 @@ namespace Application.Entity
                             Type = Enums.ImgType.ArvoreSeca
                         };
 
+                        if (aux.Proximo.Proximo == null)
+                            List._end = newPage;
+
                         aux.Proximo = newPage;
 
                         break;
                     }
 
                     aux = aux.Proximo;
+                    i++;
                 }
             }
         }
