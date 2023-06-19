@@ -1,20 +1,23 @@
 ﻿/*Aging Page*/
-.content-aging {
-    padding: 20px 0 10px 0;
+.content-wsclock {
+    padding-bottom: 10px;
     margin: 30px;
     background: #f4f4f4;
-    border-radius: 5px;
+    border: dotted;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-    .content-aging h1 {
-        color: #000;
-        text-align: center;
-        font-size: 25px;
-        font-family: 'Roboto', sans-serif;
-        font-style: italic;
-        font-weight: 600;
-        padding-bottom: 10px;
-    }
+.content-wsclock h1 {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    padding: 30px;
+}
 
 .progress-time-bar {
     width: 100%;
@@ -40,11 +43,11 @@
     z-index: 3;
 }
 
-    #watering-can img {
-        width: 8%;
-        margin-left: 3.8%;
-        margin-right: 4.5%;
-    }
+#watering-can img {
+    width: 8%;
+    margin-left: 3.8%;
+    margin-right: 4.5%;
+}
 
 #water {
     position: absolute;
@@ -54,20 +57,20 @@
     z-index: 2;
 }
 
-    #water img {
-        position: relative;
-        width: 2%;
-        margin-left: 6.8%;
-        margin-right: 7.5%;
-    }
+#water img {
+    position: relative;
+    width: 2%;
+    margin-left: 6.8%;
+    margin-right: 7.5%;
+}
 
 #Items {
     align-self: center;
     top: 40%;
-    width: 90%;
+    width: 100%;
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    justify-content:space-around;
 }
 
 .Item {
@@ -77,11 +80,6 @@
 }
 .Item a {
     margin: 20px;
-}
-
-.content-aging{
-    justify-content:center;
-    align-items:center;
 }
 
 .btnInsert{
