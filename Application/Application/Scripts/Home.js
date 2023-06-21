@@ -16,4 +16,12 @@ $(document).ready(function () {
         hill4.style.left = value * -1.5 + 'px';
         hill1.style.top = value * -1.5 + 'px';
     })
+
+    const typed = new Typed('.textDinamic', {
+        strings: ['Gerenciador de Memoria', 'Gerenciador de Memoria'],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true
+    })
 });
