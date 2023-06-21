@@ -1,0 +1,256 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --forte--: #359381;
+    --media--: #003329;
+    --fraca--: #93dfd5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #f9f9f9;
+    min-height: 100vh;
+    /*overflow-x: hidden;*/
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 2em;
+    color: #359381;
+    pointer-events: none;
+    margin-right: 270px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #359381;
+    color: #f9f9f9;
+}
+
+.gerenciador {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#text{
+    position:absolute;
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0, .2);
+}
+
+.gerenciador img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none; 
+}
+
+.sec {
+    position: relative;
+    background: #003329;
+    padding: 100px;
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sec h2{
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec p {
+    color: #fff; 
+    font-weight: 300;
+}
+
+.homeImg img {
+    width: 25vw;
+}
+
+.homeContent p {
+    font-size: 1.6rem;
+}
+
+span{
+    color: var(--fraca--);
+}
+
+.heading{
+    text-align:center;
+    font-size: 4.5rem;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/*--simulationcss--*/
+
+.btns {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: var(--fraca--);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--fraca--);
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.simulation h2{
+    margin-bottom: 5rem;
+}
+
+.simulationContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;  
+}
+
+.simulationContainer .optionAlgoritm {
+    flex: 1 1 30rem;
+    background: var(--media--);
+    padding: 3rem 10rem 4rem;
+    border-radius: 2rem;
+    color:aliceblue;
+    text-align: center;
+    border: .2rem solid var(--forte--);
+    transition: .5s ease;
+}
+
+.simulationContainer .optionAlgoritm:hover{
+    border-color: aqua;
+    transform: scale(1.02);
+}
+
+.simulation{
+    padding: 0 200px;
+    z-index: 1;
+}
+
+.optionAlgoritm i {
+    padding: 10px;
+    font-size: 5rem;
+    color: var(--fraca--);
+}
+
+.simulation .heading span{
+    text-align: center;
+    font-size: 7rem;
+    text-shadow:-1px -1px 0px var(--forte--), 
+                -1px 1px 0px var(--forte--), 
+                1px -1px 0px var(--forte--), 
+                1px 0px 0px var(--forte--);
+}
+
+.optionAlgoritm p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/*about css*/
+
+.about {
+    padding: 0 200px;
+    z-index: 10;
+}
+
+.about h2{
+    margin-bottom: 4rem;
+}
+
+.aboutContainer{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.aboutContainer .stutendBox{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--forte--);
+    overflow: hidden;
+    display: flex;
+    padding: 30%;
+}
+
+.stutendBox img{
+    width: 100%;
+
+}
+
+.stutendBox .aboutLayer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--fraca--));
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.aboutLayer h4{
+    font-size: 3rem;
+}
+
+.aboutLayer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem; 
+}
+
+.aboutLayer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--media--);
+    border-radius: 50%;
+}
+
+.aboutLayer a i {
+    font-size: 2rem;
+    color: var(--media--);
+}

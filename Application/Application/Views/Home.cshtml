@@ -2,39 +2,38 @@
     ViewData["Title"] = "Gerenciamento de Mémoria Envelhecimento e WSClock";
 }
 
-<link rel="stylesheet" href="~/CSS/style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="~/Scripts/Home.js"></script>
 
+<section class="gerenciador">
+    <img src="~/Imgs/hill1.png" id="hill1" />
+    <img src="~/Imgs/hill2.png" id="hill2" />
+    <img src="~/Imgs/hill3.png" id="hill3" />
+    <img src="~/Imgs/hill4.png" id="hill4" />
+    <img src="~/Imgs/hill5.png" id="hill5" />
 
-<div class="text-center">
-    <div class="text-algorithm-simulation">
-        <h1 class="text-aging-ws-clock">
-            <span>Simulação dos algoritmos de</span><br>
-            <span>Envelhecimento (Aging) e</span><br>
-            <span>WsClock.</span>
-        </h1>
+    <img src="~/Imgs/tree.png" id="tree" />
+    <h2 id="text">Gerenciador de Memória</h2>
+    <img src="~/Imgs/leaf.png" id="leaf" />
+    <img src="~/Imgs/plant.png" id="plant" />
+</section>
+
+<section class="sec">
+
+    <div class="homeImg">
+        <img src="~/Imgs/logo.png" />
     </div>
 
-    <div class="container-img-text">
-        <img src="~/Imgs/ar1.png" alt="Arvore">
-        <img src="~/Imgs/ar2.png" alt="Arvore">
-        <img src="~/Imgs/ar3.png" alt="Arvore">
-        <img src="~/Imgs/logo.png" alt="Arvore">
+    <div class="homeContent">
+        <h2 class="heading">Objeivos do Simulador</h2>
+        <p>
+            O programa mostrará como funciona um <span>Gerenciador de Memória</span>.
+        </p>
+        <p>
+            O gerenciador de memória controla quais partes da memória estão sendo utilizadas e quais não
+            estão. Além disso, ele é responsável por alocar espaço em memória aos processos que serão
+            executados e liberar as posições de memória ocupadas quando os processos são finalizados.
 
-        <div class="text">
-            <p>
-                O programa implementará os algoritmos Envelhecimento (Aging) e WSCLOCK de substituição de
-                páginas na memória, objetivando facilitar o aprendizado dos conceitos e execução da paginação da memória pelo SO.
-            </p>
-
-            <h4>OBJETIVOS DO SIMULADOR</h4>
-            <p>
-                • Simplificar, ao aluno, o entendimento e a assimilação do conteúdo abordado.<br>
-
-                • Abordar o assunto de maneira dinâmica e interativa.<br>
-
-                • Fornecer uma fonte de conhecimento onde todos possam ter acesso.<br>
-            </p>
-        </div>
+            Para substituição das páginas o gerenciador utiliza de diversos algoritmos de troca de página, nesse simulador abordaremos como funcionam o algoritmo <span>WSCLOCK</span> e <span>Aging</span>.
+        </p>
     </div>
-</div>
+</section>
