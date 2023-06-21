@@ -215,23 +215,39 @@ html{
 
 .stutendBox img{
     width: 100%;
-
+    transition: .5s ease;
 }
 
-.stutendBox .aboutLayer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--fraca--));
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
-    text-align: center;
-    padding: 0 4rem;
+.stutendBox:hover img {
+    transform: scale(1.1);
 }
 
-.aboutLayer h4{
+.stutendBox {
+    width: 300px;
+    height:300px;
+}
+
+    .stutendBox .aboutLayer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, .1), var(--fraca--));
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 4rem;
+        transform: translateY(100%);
+        align-items: center;
+    }
+
+    .stutendBox:hover .aboutLayer {
+        transform: translateY(0); 
+        transition: .5s ease;
+    }
+.aboutLayer h4 {
     font-size: 3rem;
 }
 
@@ -240,7 +256,7 @@ html{
     margin: .3rem 0 1rem; 
 }
 
-.aboutLayer a{
+.aboutLayer a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -248,9 +264,11 @@ html{
     height: 5rem;
     background: var(--media--);
     border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .aboutLayer a i {
     font-size: 2rem;
-    color: var(--media--);
+    color: var(--fraca--);
 }
