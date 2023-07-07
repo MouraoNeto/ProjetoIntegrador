@@ -27,7 +27,9 @@ namespace Application.Controllers
 
         public ActionResult Aging()
         {
-            return View("~/Views/Aging.cshtml");
+            ReturnModel aux = new ReturnModel(ListModel.List);
+
+            return View("~/Views/Aging.cshtml", aux);
         }
 
         public ActionResult HowUse()
@@ -60,6 +62,31 @@ namespace Application.Controllers
             ReturnModel aux = new ReturnModel(ListModel.List);
 
             return View("~/Views/WsClock.cshtml", aux);
+        }
+
+        public ActionResult UpdateAgingList(List<int> idsToUpdate, bool insertNewPage)
+        {
+            Aging aging = new Aging();
+
+            aging.UpdateList(idsToUpdate, ListModel.List, insertNewPage);
+
+            ReturnModel aux = new ReturnModel(ListModel.List);
+
+            aux.LRU = idsToUpdate[0];
+
+            List<DateTime> dateTimes = new List<DateTime>();
+            Page pageAux = ListModel.List._start;
+
+            while (pageAux != null)
+            {
+                dateTimes.Add(pageAux.LastAccess);
+
+                pageAux = pageAux.Proximo;
+            }
+
+            DateTime minDate = dateTimes.Min();
+
+            return View("~/Views/Aging.cshtml", aux);
         }
     }
 }

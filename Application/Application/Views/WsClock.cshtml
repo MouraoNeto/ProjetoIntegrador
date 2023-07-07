@@ -3,53 +3,65 @@
 @{
     ViewBag.Title = "WsClock";
 }
-<div class="content-wsclock" id="content-wsclock">
-    <h1 class="content-simulation">Simulação WsClock</h1>
-    <div class="progress-time-bar" id="progress-time-bar">
-        <div class="progress-time" id="progress-time"></div>
-    </div>
 
-    <button type="button" class="btn btn-danger btnInsert">Inserir Pagina</button>
+<section class="gerenciador">
+    <img src="~/Imgs/hill1.png" id="hill1" />
+    <img src="~/Imgs/hill2.png" id="hill2" />
+    <img src="~/Imgs/hill3.png" id="hill3" />
+    <img src="~/Imgs/hill4.png" id="hill4" />
+    <img src="~/Imgs/hill5.png" id="hill5" />
 
-    @{
-        Application.Entity.Page aux = new Application.Entity.Page();
+    <img src="~/Imgs/tree.png" id="tree" />
+    <img src="~/Imgs/leaf.png" id="leaf" />
+    <img src="~/Imgs/plant.png" id="plant" />
+    <h2 id="text" class="textDinamic"></h2>
 
-        aux = Model.List._start;
-        int i = 0;
-
-        <div class="Items" id="Items">
-
-            @while (aux != null)
-            {
-                <div class="Item">
-                    @switch (aux.Type)
-                    {
-                        case Application.Enums.ImgType.ArvoreSeca:
-                            <input type="image" src="~/Imgs/ar1.png">
-                            break;
-
-                        case Application.Enums.ImgType.ArvoreComFolhas:
-                            <input type="image" src="~/Imgs/ar2.png">
-                            break;
-
-                        case Application.Enums.ImgType.ArvoreComUmFruto:
-                            <input type="image" src="~/Imgs/ar3.png">
-                            break;
-
-                        case Application.Enums.ImgType.ArvoreFrutifera:
-                            <input type="image" src="~/Imgs/ar4.png">
-                            break;
-                    }
-                    <a class="btn btn-primary btn-lg btnPage" data-index="@i">@aux.Valor</a>
-                </div>
-
-                i++;
-                aux = aux.Proximo;
-            }
-
+    <section class="content-wsclock" id="content-wsclock" style="align-content:center">
+        <h1 class="content-simulation">Simulação - WsClock</h1>
+        <div class="progress-time-bar" id="progress-time-bar">
+            <div class="progress-time" id="progress-time"></div>
         </div>
 
-    }
+        <button type="button" class="btn btn-danger btnInsert">Inserir Pagina</button>
 
+        @{
+            Application.Entity.Page aux = new Application.Entity.Page();
 
-</div>
+            aux = Model.List._start;
+            int i = 0;
+
+            <div class="Items" id="Items">
+
+                @while (aux != null)
+                {
+                    <div class="Item">
+                        @switch (aux.Type)
+                        {
+                            case Application.Enums.ImgType.ArvoreSeca:
+                                <input type="image" src="~/Imgs/ar1.png">
+                                break;
+
+                            case Application.Enums.ImgType.ArvoreComFolhas:
+                                <input type="image" src="~/Imgs/ar2.png">
+                                break;
+
+                            case Application.Enums.ImgType.ArvoreComUmFruto:
+                                <input type="image" src="~/Imgs/ar3.png">
+                                break;
+
+                            case Application.Enums.ImgType.ArvoreFrutifera:
+                                <input type="image" src="~/Imgs/ar4.png">
+                                break;
+                        }
+                        <a class="btn btn-primary btn-lg btnPage" data-index="@i">@aux.Valor</a>
+                    </div>
+
+                    i++;
+                    aux = aux.Proximo;
+                }
+
+            </div>
+        }
+    </section>
+
+</section>

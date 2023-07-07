@@ -10,6 +10,10 @@ namespace Application.Models
     {
         public List List = new List();
 
+        public int? LRU;
+
+        public int? PageSusceptible;
+
         public ReturnModel(List list)
         {
             List = list;

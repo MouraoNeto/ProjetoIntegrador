@@ -124,6 +124,7 @@
     <Compile Include="Entity\List.cs" />
     <Compile Include="Entity\Page.cs" />
     <Compile Include="Entity\PageSubstituitionAlgorithm.cs" />
+    <Compile Include="Entity\Aging.cs" />
     <Compile Include="Entity\WsClock.cs" />
     <Compile Include="Enums\ImgType.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,6 +158,7 @@
     <Content Include="Imgs\hill3.png" />
     <Content Include="Imgs\hill4.png" />
     <Content Include="Imgs\hill5.png" />
+    <Content Include="Imgs\item-frame.png" />
     <Content Include="Imgs\jaq.jpeg" />
     <Content Include="Imgs\leaf.png" />
     <Content Include="Imgs\logo.png" />

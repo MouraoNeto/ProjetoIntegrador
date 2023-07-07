@@ -7,7 +7,7 @@ namespace Application.Entity
 {
     public interface PageSubstituitionAlgorithm
     {
-        void SubstituitePage(Page anterior, Page proximo);
+        void SubstituitePage(List List);
 
         void UpdateList(List<int> idsToUpdate, List List, bool insertNewPage);
     }

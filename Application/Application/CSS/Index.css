@@ -58,13 +58,13 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
 }
 
-#text {
-    position: absolute;
+#text{
+    position:absolute;
     font-size: 5em;
-    color: #003329;
+    color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0, .2);
 }
 
@@ -82,9 +82,9 @@ header{
     padding: 100px;
     min-height: 100vh;
     padding: 10rem 9% 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .sec h2{
@@ -184,99 +184,6 @@ html{
 .optionAlgoritm p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
-}
-
-.content-wsclock {
-    padding-bottom: 10px;
-    margin: 200px;
-    background: #f4f4f4;
-    border: dotted;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-wsclock h1 {
-    color: var(--fraca--);
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    font-weight: 600;
-    padding: 30px;
-}
-
-.progress-time-bar {
-    width: 100%;
-    height: 20px;
-    border-radius: 10px;
-    background-color: #8ae78a;
-}
-
-.progress-time {
-    height: 100%;
-    border-radius: 10px;
-    background-color: #24b824;
-    width: 0%;
-    transition: width 0.5s ease;
-}
-
-#watering-can {
-    align-self: center;
-    position: absolute;
-    top: 2%;
-    width: 100%;
-    align-items: center;
-    z-index: 3;
-}
-
-#watering-can img {
-    width: 8%;
-    margin-left: 3.8%;
-    margin-right: 4.5%;
-}
-
-#water {
-    position: absolute;
-    width: 100%;
-    align-items: center;
-    top: 8%;
-    z-index: 2;
-}
-
-#water img {
-    position: relative;
-    width: 2%;
-    margin-left: 6.8%;
-    margin-right: 7.5%;
-}
-
-#Items {
-    align-self: center;
-    top: 40%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.Item {
-    width: 16.3%;
-    display: flex;
-    flex-direction: column;
-}
-
-.Item a {
-    margin: 20px;
-}
-
-.btnInsert {
-    margin: 50px;
-    align-self: center
-}
-
-#Content .content-wsclock {
-    overflow: hidden;
 }
 
 /*about css*/
@@ -383,26 +290,142 @@ html{
     flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--fraca--);
-    width: 100%;
-    height: 50px;
-    margin: auto;
-    bottom: 0;
-    position: fixed;
 }
 
 .footer-text p {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.6rem;
 }
 
-/* how using css */
-.content-how-using {
-    padding-top: 20px;
-    margin: 147px;
+/*WSCLOCK STYLE*/
+
+.content-wsclock {
+    padding-bottom: 10px;
+    margin: 30px;
     background: #f4f4f4;
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 1200px;
 }
 
-.content-how-using p {
-    text-align: center;
-    margin-top: 30px;
+    .content-wsclock h1 {
+        color: #000;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        padding: 30px;
+    }
+
+.progress-time-bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #8ae78a;
 }
+
+.progress-time {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #24b824;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+#watering-can {
+    align-self: center;
+    position: absolute;
+    top: 2%;
+    width: 100%;
+    align-items: center;
+    z-index: 3;
+}
+
+    #watering-can img {
+        width: 8%;
+        margin-left: 3.8%;
+        margin-right: 4.5%;
+    }
+
+#water {
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    top: 8%;
+    z-index: 2;
+}
+
+    #water img {
+        position: relative;
+        width: 2%;
+        margin-left: 6.8%;
+        margin-right: 7.5%;
+    }
+
+#Items {
+    align-self: center;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Item {
+    width: 16.3%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .Item a {
+        margin: 20px;
+    }
+
+.btnInsert {
+    margin: 20px;
+    margin-left:550px;
+    align-self: center;
+}
+
+.itemFrame img{
+    width: 50px;
+    height: 50px;
+    box-sizing:border-box;
+    position:relative;
+}
+
+.itemFrame h2{
+    position: absolute;
+    box-sizing:border-box;
+}
+
+#h1{
+    left: 900px;
+    top: 2px;
+    margin-top: 150px;
+}
+
+#h2 {
+    left: 200px;
+    top: 2px;
+    margin-top: 150px;
+}
+
+/*#p1 {
+    left: 1024px;
+    top: 2px;
+    margin-top: 197px;
+    z-index:2;
+    color:aliceblue;
+}
+
+#p2 {
+    left: 317px;
+    top: 2px;
+    margin-top: 197px;
+    z-index: 2;
+    color: aliceblue;
+}*/

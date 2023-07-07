@@ -20,6 +20,9 @@ $(document).ready(function () {
                     $(".wsclock-btn").on('click', function () {
                         LoadWsClockPage()
                     })
+                    $(".aging-btn").on('click', function () {
+                        LoadAgingPage()
+                    })
                 }
             }
         })
@@ -60,6 +63,53 @@ function LoadWsClockPage() {
             setTimeout(function () {
                 UpdateWsClockList(pagesToAdd)
             }, 11000);
+        }
+    })
+}
+
+function LoadAgingPage() {
+    var url = '/Home/Aging';
+
+    $.ajax({
+        method: "POST",
+        url: url,
+        complete: function () {
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            bootstrapNotify('<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Deu erro!', "danger", "top");
+        },
+        success: function (response) {
+            $("#Content").html(response);           
+
+             pagesToAdd = [];
+
+            $(".btnPageAging").on('click', function (e) {
+
+                pagesToAdd.push(parseInt(e.target.dataset.index))
+
+                url = '/Home/UpdateAgingList';
+
+                var data = {
+                    IdsToUpdate: pagesToAdd,
+                    InsertNewPage: insertNewPage
+                }
+
+                $.ajax({
+                    method: "POST",
+                    url: url,
+                    data: data,
+                    complete: function () {
+
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        //bootstrapNotify('<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Deu erro!', "danger", "top");
+                    },
+                    success: function (response) {
+                        $("#Content").html(response);
+                    }
+                })
+            })
         }
     })
 }

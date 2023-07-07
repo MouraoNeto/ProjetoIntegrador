@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Application.Entity
 {
-    public class WsClock : PageSubstituitionAlgorithm
+    public class Aging : PageSubstituitionAlgorithm
     {
         public void SubstituitePage(List List)
         {
@@ -70,42 +70,19 @@ namespace Application.Entity
         {
             Page aux = new Page();
 
-            aux = List._start;
-            int j = 0;
-
-            if(idsToUpdate == null)
+            foreach(int index in idsToUpdate)
             {
-                while(aux != null)
+                aux = List._start;
+
+                for(int i=0; i < 4; i++)
                 {
-                    aux.Valor = aux.Valor.Substring(0, 3);
-                    aux.Valor = "0" + aux.Valor;
-                    if (aux.Type != Enums.ImgType.ArvoreSeca) 
-                        aux.Type--;
+                    if (i == index)
+                    {
+                        aux.LastAccess = DateTime.Now;
+                    }
+
                     aux = aux.Proximo;
                 }
-
-                return;
-            }
-            
-            for(int i=0; i <= 3; i++)
-            {
-                if(j != idsToUpdate.Count && i == idsToUpdate[j])
-                {
-                    aux.Valor = aux.Valor.Substring(0, 3);
-                    aux.Valor = "1" + aux.Valor;
-                    aux.LastAccess = DateTime.Now;
-                    if (aux.Type != Enums.ImgType.ArvoreFrutifera) 
-                        aux.Type++;
-
-                    j++;
-                }
-                else
-                {
-                    aux.Valor = aux.Valor.Substring(0, 3);
-                    aux.Valor = "0" + aux.Valor;
-                    if(aux.Type != Enums.ImgType.ArvoreSeca) aux.Type--;
-                }
-                aux = aux.Proximo;
             }
 
             if (insertNewPage)
