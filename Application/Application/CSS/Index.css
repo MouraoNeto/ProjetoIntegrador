@@ -409,23 +409,7 @@ html{
 }
 
 #h2 {
-    left: 200px;
+    left: 300px;
     top: 2px;
     margin-top: 150px;
 }
-
-/*#p1 {
-    left: 1024px;
-    top: 2px;
-    margin-top: 197px;
-    z-index:2;
-    color:aliceblue;
-}
-
-#p2 {
-    left: 317px;
-    top: 2px;
-    margin-top: 197px;
-    z-index: 2;
-    color: aliceblue;
-}*/

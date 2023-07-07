@@ -17,12 +17,12 @@
     <h2 id="text" class="textDinamic"></h2>
 
     <section class="content-wsclock" id="content-wsclock" style="align-content:center">
-        <h1 class="content-simulation">Simulação - WsClock</h1>
+        <h1 class="content-simulation">Simulação - Aging</h1>
 
         <div class="itemFrame" style=" display:flex; justify-content:space-between">
 
-            <div style="background-image: url(../Imgs/item-frame.png); width: 50px; height: 50px; z-index: 25; background-size: cover; display:flex; align-items:center; justify-content:center">
-                <h2 id="h1">Última página acessada</h2>
+            <div style="margin-left: 230px; background-image: url(../Imgs/item-frame.png); width: 50px; height: 50px; z-index: 25; background-size: cover; display:flex; align-items:center; justify-content:center">
+                <h2 style="margin-top:200px; margin-left: 60px" id="h1">Página suscetível a troca</h2>
                 @if (Model.LRU == null)
                 {
                     <h2 id="p1">-1</h2>
@@ -34,20 +34,21 @@
 
             </div>
 
-            <div style="background-image: url(../Imgs/item-frame.png); width: 50px; height: 50px; z-index: 25; background-size: cover; display:flex; align-items:center; justify-content:center">
-                <h2 id="h2">Página sucetível a troca</h2>
-                @if (Model.LRU == null)
+            <div style="margin-right: 230px; background-image: url(../Imgs/item-frame.png); width: 50px; height: 50px; z-index: 25; background-size: cover; display: flex; align-items: center; justify-content: center">
+                <h2 style="margin-top:200px; margin-right: 60px"  id="h2">Última página acessada</h2>
+                @if (Model.PageSusceptible == null)
                 {
                     <h2 id="p2">-1</h2>
                 }
                 else
                 {
                     <h2 id="p2">@Model.PageSusceptible</h2>
+                    <input id="PageSusceptible" type="hidden" value="@Model.PageSusceptible"/>
                 }
             </div>
         </div>
 
-        <button type="button" class="btn btn-danger btnInsertAging">Inserir Pagina</button>
+        <button style="margin-left:550px" type="button" class="btn btn-danger btnInsertAging">Inserir Pagina</button>
 
         @{
             Application.Entity.Page aux = new Application.Entity.Page();

@@ -162,6 +162,7 @@
     <Content Include="Imgs\jaq.jpeg" />
     <Content Include="Imgs\leaf.png" />
     <Content Include="Imgs\logo.png" />
+    <Content Include="Imgs\LogoProjeto.png" />
     <Content Include="Imgs\plant.png" />
     <Content Include="Imgs\regador.png" />
     <Content Include="Imgs\tree.png" />

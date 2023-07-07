@@ -86,6 +86,20 @@ namespace Application.Controllers
 
             DateTime minDate = dateTimes.Min();
 
+            pageAux = ListModel.List._start;
+
+            int i = 0;
+
+            while (pageAux != null)
+            {
+                if (pageAux.LastAccess == minDate)
+                    break;
+                i++;
+                pageAux = pageAux.Proximo;
+            };
+
+            aux.PageSusceptible = i;
+
             return View("~/Views/Aging.cshtml", aux);
         }
     }
